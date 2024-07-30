@@ -24,9 +24,14 @@ series = {WWW '24}
 }
 ```
 
+### Datasets
+The training dataset and test dataset are in the Dataset folder.
+AA_cls_train.json and AA_cls_test.json are regional datasets collected from twitter.
+
+
 ## Implementation
 For the first Contrastive Stage, please run the script as the following:
-'''
+```
 python examples/pytorch/text-classification/run_glue.py \
     --model_name_or_path bert-base-uncased \
     --do_train \
@@ -43,7 +48,7 @@ python examples/pytorch/text-classification/run_glue.py \
     --per_device_eval_batch_size=32 \
     --save_strategy no \
     --evaluation_strategy epoch
-'''
+```
 
 For the Disentanglement Stage, please run the script as the following:
 python src/transformer/train.py 
@@ -51,6 +56,6 @@ python src/transformer/train.py
 
 ## Evaluation 
 For the ranking part, you can use the following command:
-'''
+```
 python ranking_eva.py
-'''
+```
