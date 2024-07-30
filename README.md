@@ -24,4 +24,33 @@ series = {WWW '24}
 }
 ```
 
-## Installation
+## Implementation
+For the first Contrastive Stage, please run the script as the following:
+'''
+python examples/pytorch/text-classification/run_glue.py \
+    --model_name_or_path bert-base-uncased \
+    --do_train \
+    --do_eval \
+    --do_contrastive_cls \
+    --num_train_epochs 5 \
+    --gradient_accumulation_steps 4 \
+    --test_file data/AA_data/AA_cls_test.json \
+    --validation_file data/AA_data/AA_cls_test.json \
+    --train_file data/AA_data/AA_cls_train.json \
+    --output_dir AA_region_cls/ \
+    --overwrite_output_dir \
+    --per_device_train_batch_size=128 \
+    --per_device_eval_batch_size=32 \
+    --save_strategy no \
+    --evaluation_strategy epoch
+'''
+
+For the Disentanglement Stage, please run the script as the following:
+python src/transformer/train.py 
+
+
+## Evaluation 
+For the ranking part, you can use the following command:
+'''
+python ranking_eva.py
+'''
