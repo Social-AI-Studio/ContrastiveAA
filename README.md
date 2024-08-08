@@ -35,12 +35,11 @@ For the first Contrastive Stage, please run the script as the following:
 python examples/pytorch/text-classification/run_glue.py \
     --model_name_or_path bert-base-uncased \
     --do_train \
-    --do_eval \
-    --do_contrastive_cls \
+    --do_predict \
     --num_train_epochs 5 \
     --gradient_accumulation_steps 4 \
     --test_file data/AA_data/AA_cls_test.json \
-    --validation_file data/AA_data/AA_cls_test.json \
+    --validation_file data/AA_data/AA_cls_val.json \
     --train_file data/AA_data/AA_cls_train.json \
     --output_dir AA_region_cls/ \
     --overwrite_output_dir \
